@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
 app.use(express.static('jarvis'));
 var i = 1 ; 
-
+var port = process.env.PORT || 8080;
 
 //app.use(require('./controllers')); 
 
@@ -246,6 +246,6 @@ console.log(string) ;
 return JSON.stringify(string) ;  
 }
 
-    app.listen(3000 , function(){
+    app.listen(port, function(){
 	console.log('listening on port 3000'); 
 }) ; 		
