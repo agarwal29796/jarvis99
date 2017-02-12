@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="shortcut icon" href="/proff/favicon.ico" />
  <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width">
@@ -26,7 +27,7 @@ top : 2%;
 right : 5%;
  }
 #listener textarea {
-position : absolute;	
+position : absolute;  
 text-align : center;
 border : none;
 border-bottom : 2px solid #5DADE2;
@@ -73,12 +74,12 @@ right : 10%;
 top : 10%;
    }
  #playBarInfo>#simillarSongBox {
- 	position : absolute;
- 	top : 15%;
- 	right : 0%;
- 	background : #eeeeee;
- 	width : 25%;
- 	visibility : hidden;
+  position : absolute;
+  top : 15%;
+  right : 0%;
+  background : #eeeeee;
+  width : 25%;
+  visibility : hidden;
  }
  #playBarInfo>#simillarSongBox>#simillarSong>li { 
   box-sizing : border-box;
@@ -90,12 +91,12 @@ top : 10%;
   } 
 
    #playBarInfo>#relatedSongBox {
- 	position : absolute;
- 	top : 15%;
- 	left : 0%;
- 	background : #eeeeee;
- 	width : 25%;
- 	visibility : hidden;
+  position : absolute;
+  top : 15%;
+  left : 0%;
+  background : #eeeeee;
+  width : 25%;
+  visibility : hidden;
  }
  #playBarInfo>#relatedSongBox>#relatedSong>li { 
   box-sizing : border-box;
@@ -119,9 +120,9 @@ border : 1px solid #5DADE2;
 background : #eeeeee;
  }
 #footer > #header  {
-z-index : 20;	
+z-index : 20; 
 } 
-#footer > #header > span { 	
+#footer > #header > span {  
 font-size : 15px;
 color : #5DADE2;
 position : absolute;
@@ -132,10 +133,10 @@ height : 100%;
 padding : 10px;
  }
 #footer > #header {
-border : 1px solid #5DADE2;	
+border : 1px solid #5DADE2; 
 } 
 #footer>#instruction { 
-background : #eeeeee;	
+background : #eeeeee; 
 visibility : hidden;
 position : fixed;
 left : 25%;
@@ -146,7 +147,7 @@ transition : height 1s;
 z-index : -1 ;
  } 
 #footer>#setting { 
-background : #eeeeee;	
+background : #eeeeee; 
 visibility : hidden;
 position : fixed;
 left : 25%;
@@ -158,7 +159,7 @@ z-index : -1;
  }
  #searchResult {
  visibility : hidden;
- display : block ;	
+ display : block ;  
  } 
  #leftPanel { 
 position : absolute;
@@ -179,10 +180,10 @@ background : #eeeeee;
  right : 0%;
  top : 12%;
  width : 25%;
- background : #eeeeee;	
+ background : #eeeeee;  
  } 
- #viewI { 	visibility : visible;}
- #viewQ { 	visibility:  hidden ;  }
+ #viewI {   visibility : visible;}
+ #viewQ {   visibility:  hidden ;  }
  #viewI>li{ 
  padding : 5px ;
  border-left : 1px solid #5DADE2;
@@ -235,8 +236,8 @@ left : 0%;
  z-index : 10;
  }  
  #iframeResizer:hover {
- opacity : 1;	
- cursor: pointer ; 	
+ opacity : 1; 
+ cursor: pointer ;  
  visibility : visible;
  background : black;
  }
@@ -245,7 +246,7 @@ left : 0%;
  border-right : 1px solid #5DADE2;
  border-bottom : 1px solid #5DADE2;
  list-style-type: none ;
- cursor : pointer; 	
+ cursor : pointer;  
  } 
 </style>
 </head>
@@ -262,13 +263,13 @@ left : 0%;
 <div id = "simillarSongBox">
 <h3 style = "text-align : center ">Simillar Songs</h3>
 <div id = "simillarSong"></div>
-</div>	
+</div>  
 <div id = "relatedSongBox">
 <h3 style = "text-align : center">Related Songs</h3>
 <div id = "relatedSong"></div>
 </div>
 </div>
-<!--iframe id ="youtubebar" width="560" height="315" src="https://www.youtube.com/embed/EpEraRui1pc?&autoplay=1" frameborder="0" allowfullscreen></iframe-->	
+<!--iframe id ="youtubebar" width="560" height="315" src="https://www.youtube.com/embed/EpEraRui1pc?&autoplay=1" frameborder="0" allowfullscreen></iframe-->  
 <div id = "playbar" style = "visibility : visible" available = false >
 </div>
 </div>
@@ -278,17 +279,17 @@ left : 0%;
 <div id = "leftPanel">
 <h3 style = "text-align : center"></h3>
 <div id = "panel">
-<li onclick = "changeNotionQtoI()" id =  "informatic">Informatic</li>
-<li onclick = "changeNotionItoQ()" id = "conversative">Conversative</li>	
-</div>	
+<li onclick = "changeNotionQtoI()" id =  "informatic">Information</li>
+<li onclick = "changeNotionItoQ()" id = "conversative">Conversation</li>  
+</div>  
 </div>
 <div id = "midPanel">
 <div id = "viewI">
-<!--=========================IFRAME HACK=========================-->	
+<!--=========================IFRAME HACK=========================-->  
 <div id = "webBar">
-<iframe src = "" id = "webBarFrame" ></iframe>	
+<iframe src = "" id = "webBarFrame" ></iframe>  
 <img src = "/proff/open.png" id = "iframeResizer" onclick = "screenFrame()" > 
-</div>	
+</div>  
 <!--=============================================================-->
 </div>
 <div id = "viewQ" style = 'cursor : auto'></div>
@@ -297,8 +298,8 @@ left : 0%;
 <div id = "rightPanel">
 <h3 style = "text-align: center">Related Section</h3>
 <div id = "viewI"></div>
-<div id = "viewQ"></div>	
-</div>	
+<div id = "viewQ"></div>  
+</div>  
 
 </div>
 <!--=============================================================-->
@@ -306,11 +307,49 @@ left : 0%;
 <div id = "footer">
 <div id = "header">
 <span style = "left : 0%" id = "instructionBar" onclick = "instruction()">INSTRUCTIONS</span>
-<span style = "right : 0%" onclick = "setting()" id = "settingBar">SETTING</span>	
+<span style = "right : 0%" onclick = "setting()" id = "settingBar">SETTING</span> 
 </div>
-<div id = "instruction">
+<div id = "instruction" style = "overflow : auto">
 <h3 style = "text-align : center">INSTRUCTIONS</h3>
+<div>
+<li>The current application is only supported in chrome v-33 and greater(only desktop).</li> 
+<li>For better performance of application use <b>headphone/earphone</b>.</li>
+
+<li>To start query with Jarvis , say any of following command =>
+<li>...<b>HOW ARE YOU</b> JARVIS....</li>
+<li>...<b>SWITCH ON</b> JARVIS....</li>
+<li>...<b>WHAT ARE YOU DOING</b> JARVIS....</li>
+</li>
+
+<h4>Play the video</h4>
+<li>To play video say =>... <b>PLAY</b> (song/video name)</li>
+<li>To remove video say => ...<b>REMOVE</b>... or ...<b>STOP</b>...</li>
+<h4>Query the questions</h4>
+<li>To ask question use questions starting with question words. Ex= <b>(WHO/WHAT/HOW/WHICH.. etc) is APJ Abdul Kalam?</b></li>
+<li>To go to conversation section say => ...go to the <b>CONVERSATION</b> section..</li>
+<li>To come back to information section say=> ...go to the <b>INFORMATION</b> section</li>
+<li>To go full screen say => ...go to <b>(FULL/WIDE) SCREEN</b> ...</li>
+<li>To go back to smaller screen say => ...make the screen <b>(NARROW/SMALL)</b> ...</li>
+<li>To clear screen say => <b>(CLEAR ALL/REMOVE)</b> ...</li>
+<h4>Shut down Jarvis from Query</h4>
+<li>to stop jarvis from queying say => ...<b>SHUT DOWN</b> Jarvis... </li>
+<li>To start the jarvis again follow the start section shown above</li>
+
+<h5>Setting</h5>
+<li>To open setting say =>...open the <b>SETTING</b> Jarvis...</li>
+<li>To close the setting say => ...close the <b>SETTING</b> Jarvis...</li>
+<h5>Instructions</h5>
+<li>To open the instructions say => ...open the <b>INSTRUCTIONS</b> Jarvis...</li>
+<li>To close the instructions say => ...close the <b>INSTRUCTIONS</b> Jarvis...</li>
+<h4>OTHER IMPORTANT NOTES</h4>
+<li>To go from 'question query section' to video section or vice versa you have to clear that section first (remove or clear as instructed in their respective section).</li>
+<li>Jarvis can not recognise you well if their is clashes of voice in surrounding or their is a weak internet connection.</li>
+<li>To enjoy fully press F11</li>
+<li>You can use your own words in place of dots. only bold texts are the key words jarvis use to recognise the type of query.</li>
+</div><br><br><br><br><br><br>
 </div>
+
+
 <div id = "setting">
    <h3 style = "text-align : center">SETTING</h3>
       <h4>Choose your's assistant language</h4>
@@ -330,7 +369,7 @@ function screenFrame(){
 var iframe = document.querySelector('#midPanel>#viewI>#webBar');
 var img = document.querySelector('#midPanel>#viewI>#webBar>img') ; 
 if(currentFrame === 'small'){
-img.src = '/proff/close.png' ; 	
+img.src = '/proff/close.png' ;  
 iframe.style.position = 'fixed'; 
 iframe.style.left = '0%' ; 
 iframe.style.top  = '12%' ; 
@@ -339,7 +378,7 @@ iframe.style.zIndex = '30' ;
 currentFrame = 'large' ;  
 }
 else { 
-img.src = '/proff/open.png' ;	
+img.src = '/proff/open.png' ; 
 iframe.style.position = 'absolute'; 
 iframe.style.left = '0%' ; 
 iframe.style.top  = '0%' ; 
@@ -347,7 +386,7 @@ iframe.style.width = '100%' ;
 iframe.style.height = '400px' ; 
 iframe.style.zIndex = '0' ; 
 currentFrame = 'small' ; 
-} 	
+}   
 } 
 function changeNotionItoQ(){
 var designElementQ = document.querySelector('#leftPanel>#panel>#conversative') ;
@@ -356,13 +395,13 @@ designElementQ.style.background  = '#A6B8C3';
 designElementQ.style.color = 'white' ;  
 designElementI.style.background = '#eeeeee' ; 
 designElementI.style.color = "black" ; 
-document.querySelector('#midPanel>#viewI>#webBar').style.visibility = 'hidden' ;	
-document.querySelector('#midPanel>#viewI>#webBar').style.display = 'none' ;	
+document.querySelector('#midPanel>#viewI>#webBar').style.visibility = 'hidden' ;  
+document.querySelector('#midPanel>#viewI>#webBar').style.display = 'none' ; 
 currentView = 'q' ; 
 document.querySelector('#midPanel>#viewI').style.visibility = 'hidden' ; 
 document.querySelector('#rightPanel>#viewI').style.visibility = 'hidden' ; 
 document.querySelector('#midPanel>#viewQ').style.visibility = 'visible' ; 
-document.querySelector('#rightPanel>#viewQ').style.visibility = 'visible' ; 	
+document.querySelector('#rightPanel>#viewQ').style.visibility = 'visible' ;   
 document.querySelector('#midPanel>#viewI').style.display = 'none' ; 
 document.querySelector('#rightPanel>#viewI').style.display = 'none' ; 
 document.querySelector('#midPanel>#viewQ').style.display = 'block' ; 
@@ -374,23 +413,23 @@ var designElementI = document.querySelector('#leftPanel>#panel>#informatic') ;
 designElementQ.style.background  = '#eeeeee';
 designElementQ.style.color = "black" ;  
 designElementI.style.background = '#A6B8C3' ; 
-designElementI.style.color = "white" ; 	
+designElementI.style.color = "white" ;  
 document.querySelector('#midPanel>#viewI>#webBar').style.visibility = 'visible' ;
 document.querySelector('#midPanel>#viewI>#webBar').style.display = 'block' ;
 currentView = 'i' ;
 document.querySelector('#midPanel>#viewI').style.display = 'block' ; 
 document.querySelector('#rightPanel>#viewI').style.display = 'block' ; 
 document.querySelector('#midPanel>#viewQ').style.display = 'none' ; 
-document.querySelector('#rightPanel>#viewQ').style.display = 'none' ; 	
+document.querySelector('#rightPanel>#viewQ').style.display = 'none' ;   
 document.querySelector('#midPanel>#viewI').style.visibility = 'visible' ; 
 document.querySelector('#rightPanel>#viewI').style.visibility = 'visible' ; 
 document.querySelector('#midPanel>#viewQ').style.visibility = 'hidden' ; 
-document.querySelector('#rightPanel>#viewQ').style.visibility = 'hidden' ; 	
+document.querySelector('#rightPanel>#viewQ').style.visibility = 'hidden' ;  
 }
 
 function instruction(){
 settingInDefault() ;
-if(!instructionPad){ 	
+if(!instructionPad){  
 var instructionBar =  document.querySelector('#instructionBar') ; 
 instructionBar.style.background = '#A6B8C3' ; 
 instructionBar.style.color = 'white' ; 
@@ -406,7 +445,7 @@ instructionInDefault() ;
 
 function setting(){
 instructionInDefault() ;
-if(!settingPad){ 	
+if(!settingPad){  
 var settingBar =  document.querySelector('#settingBar') ; 
 settingBar.style.background = '#A6B8C3' ; 
 settingBar.style.color = 'white' ; 
@@ -417,33 +456,33 @@ setting.style.height = '50%';
 settingPad = true ;   
  }
  else
- 	settingInDefault() ; 
+  settingInDefault() ; 
  }
 function instructionInDefault(){
-instructionPad = false ; 	
+instructionPad = false ;  
 var instructionBar = document.querySelector('#instructionBar') ; 
 instructionBar.style.color = '#5DADE2' ; 
 instructionBar.style.background = '#eeeeee' ; 
 var instruction = document.querySelector('#instruction') ; 
 instruction.style.visibility = 'hidden' ; 
 instruction.style.display  = 'none' ; 
-instruction.style.height = '0%' ; 	
+instruction.style.height = '0%' ;   
 }
 function settingInDefault(){
-settingPad = false ;	
+settingPad = false ;  
 var settingBar = document.querySelector('#settingBar') ; 
 settingBar.style.color = '#5DADE2' ; 
 settingBar.style.background = '#eeeeee' ; 
 var setting = document.querySelector('#setting') ; 
 setting.style.visibility = 'hidden' ; 
 setting.style.display = 'none' ;
-setting.style.height = '0%' ; 	
+setting.style.height = '0%' ;   
 }
 </script>
 <script src = "/proff/JSFiles/synthesiser.js"></script>
 <script src = "/proff/JSFiles/searchQuery.js"></script>
 <script src = "/proff/JSFiles/songQuery.js"></script>
-<script src = "/proff/JSFiles/queryFilter.js"></script>
+<script src = "/proff/JSfiles/queryFilter.js"></script>
 <script src = "/proff/JSFiles/recognition.js"></script>
 </body>
 </html>
