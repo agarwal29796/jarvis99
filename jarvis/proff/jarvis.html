@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <title>JARVIS</title>
+<style>
+body { 
+background : white;
+font-family : "Palatino Linotype", "Book Antiqua", Palatino, serif;
+ }
+#listener{ 
+position : absolute;
+width : 100%;
+height : 10% ; 
+left : 0%;
+top : 1%;
+background : #eeeeee;
+z-index : 20;
+opacity : .5;
+ }
+ #listener img {
+ position : absolute; 
+top : 2%;
+right : 5%;
+ }
+#listener textarea {
+position : absolute;	
+text-align : center;
+border : none;
+border-bottom : 2px solid #5DADE2;
+background : #eeeeee;
+color: #5DADE2;
+font-size : 20px;
+width : 80% ; 
+left : 0%;
+top : 0%;
+height : 92%;
+ }
+textarea:focus {
+    border-bottom : 2px solid #5DADE2;
+    overflow: auto;
+    outline: none;
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+#playbar { 
+position : absolute;
+left : 30% ; 
+top : 15%;
+ }
+#playbarCancel>img{
+position : absolute;
+bottom : 0%;
+left : 15%;
+width : 70%;
+text-align : center ;
+cursor : pointer;
+text-align : center;
+ }
+ .musicDisco { 
+position : absolute;
+  }
+ #musicDisco0 { 
+ left : 10%;
+ top : 10%;
+  } 
+  #musicDisco1 { 
+right : 10%;
+top : 10%;
+   }
+ #playBarInfo>#simillarSongBox {
+ 	position : absolute;
+ 	top : 15%;
+ 	right : 0%;
+ 	background : #eeeeee;
+ 	width : 25%;
+ 	visibility : hidden;
+ }
+ #playBarInfo>#simillarSongBox>#simillarSong>li { 
+  box-sizing : border-box;
+  border-bottom : 1px solid #5DADE2;
+  border-left : 1px solid #5DADE2;
+  font-size: 15px ;
+  padding : 10px;
+  list-style-type: decimal ; 
+  } 
+
+   #playBarInfo>#relatedSongBox {
+ 	position : absolute;
+ 	top : 15%;
+ 	left : 0%;
+ 	background : #eeeeee;
+ 	width : 25%;
+ 	visibility : hidden;
+ }
+ #playBarInfo>#relatedSongBox>#relatedSong>li { 
+  box-sizing : border-box;
+  border-bottom : 1px solid #5DADE2;
+  border-right : 1px solid #5DADE2;
+  font-size: 15px ;
+  padding : 10px;
+  list-style-type: decimal ; 
+  }  
+ a {
+  color: inherit;
+  text-decoration : none;
+   } 
+#footer {
+position : fixed;
+bottom : 0%;
+width : 50%;
+left : 25%;
+height : 8%;
+border : 1px solid #5DADE2;
+background : #eeeeee;
+ }
+#footer > #header  {
+z-index : 20;	
+} 
+#footer > #header > span { 	
+font-size : 15px;
+color : #5DADE2;
+position : absolute;
+width : 50%;
+text-align:center;
+ cursor: pointer;
+height : 100%;
+padding : 10px;
+ }
+#footer > #header {
+border : 1px solid #5DADE2;	
+} 
+#footer>#instruction { 
+background : #eeeeee;	
+visibility : hidden;
+position : fixed;
+left : 25%;
+width : 50%;
+height : 0%;
+bottom : 0%;
+transition : height 1s;
+z-index : -1 ;
+ } 
+#footer>#setting { 
+background : #eeeeee;	
+visibility : hidden;
+position : fixed;
+left : 25%;
+width : 50%;
+height : 0%;
+bottom : 0%;
+transition : height 1s;
+z-index : -1;
+ }
+ #searchResult {
+ visibility : hidden;
+ display : block ;	
+ } 
+ #leftPanel { 
+position : absolute;
+width : 15%;
+left : 0%;
+top : 12%;
+background : #eeeeee;
+  }
+#midPanel { 
+position : absolute;
+left : 17%;
+width : 55%;
+top : 12%;
+background : #eeeeee;
+ }
+ #rightPanel  {
+ position : absolute;
+ right : 0%;
+ top : 12%;
+ width : 25%;
+ background : #eeeeee;	
+ } 
+ #viewI { 	visibility : visible;}
+ #viewQ { 	visibility:  hidden ;  }
+ #viewI>li{ 
+ padding : 5px ;
+ border-left : 1px solid #5DADE2;
+ border-bottom : 1px solid #5DADE2;
+ list-style-type: decimal ; 
+ cursor: pointer ;
+ overflow : auto;
+  } 
+#rightPanel>#viewQ>li{ 
+ padding : 5px ;
+ border-left : 1px solid #5DADE2;
+ border-bottom : 1px solid #5DADE2;
+ list-style-type: decimal ; 
+ cursor : pointer;
+ overflow : hidden;
+  }
+#midPanel>#viewQ>li{ 
+ padding : 5px ;
+ border-left : 1px solid #5DADE2;
+ border-bottom : 1px solid #5DADE2;
+ list-style-type: decimal ; 
+  }
+
+ #webBar {
+position : absolute;
+margin : 0;
+padding : 0 ;
+ width : 100%;
+ height  : 400px;
+ visibility : hidden;
+ }
+ #webBar>iframe {
+position : absolute;
+width : 99%;
+height : 100%;
+top : 0%;
+left : 0%;
+ padding : 0;
+ margin : 0;
+  } 
+ #iframeResizer{ 
+ position : absolute;
+ width : 35px;
+ height : 35px;
+ top : 0%;
+ left : 0%;
+ text-align : center;
+ background : #eeeeee;
+ opacity : .5;
+ z-index : 10;
+ }  
+ #iframeResizer:hover {
+ opacity : 1;	
+ cursor: pointer ; 	
+ visibility : visible;
+ background : black;
+ }
+ #leftPanel>#panel>li {
+ padding : 5px ;
+ border-right : 1px solid #5DADE2;
+ border-bottom : 1px solid #5DADE2;
+ list-style-type: none ;
+ cursor : pointer; 	
+ } 
+</style>
+</head>
+<body>
+<!---==================SEARCH BAR==================-->
+<div id = "listener">
+<textarea id = "result input" class = "output" spellcheck="false" disabled></textarea>
+<img src = "/proff/micoff.gif" id = "mic" >
+</div>
+<!--==============================================-->
+<!--=============== PLAYBAR is HERE============== -->
+<div>
+<div id = "playBarInfo">
+<div id = "simillarSongBox">
+<h3 style = "text-align : center ">Simillar Songs</h3>
+<div id = "simillarSong"></div>
+</div>	
+<div id = "relatedSongBox">
+<h3 style = "text-align : center">Related Songs</h3>
+<div id = "relatedSong"></div>
+</div>
+</div>
+<!--iframe id ="youtubebar" width="560" height="315" src="https://www.youtube.com/embed/EpEraRui1pc?&autoplay=1" frameborder="0" allowfullscreen></iframe-->	
+<div id = "playbar" style = "visibility : visible" available = false >
+</div>
+</div>
+<!--============================================================-->
+<!--=============================SEARCH RESULT==================-->
+<div id = "searchResult">
+<div id = "leftPanel">
+<h3 style = "text-align : center"></h3>
+<div id = "panel">
+<li onclick = "changeNotionQtoI()" id =  "informatic">Informatic</li>
+<li onclick = "changeNotionItoQ()" id = "conversative">Conversative</li>	
+</div>	
+</div>
+<div id = "midPanel">
+<div id = "viewI">
+<!--=========================IFRAME HACK=========================-->	
+<div id = "webBar">
+<iframe src = "" id = "webBarFrame" ></iframe>	
+<img src = "/proff/open.png" id = "iframeResizer" onclick = "screenFrame()" > 
+</div>	
+<!--=============================================================-->
+</div>
+<div id = "viewQ" style = 'cursor : auto'></div>
+</div>
+
+<div id = "rightPanel">
+<h3 style = "text-align: center">Related Section</h3>
+<div id = "viewI"></div>
+<div id = "viewQ"></div>	
+</div>	
+
+</div>
+<!--=============================================================-->
+<!--=========================SETTING & INSTRUCTIONS==============-->
+<div id = "footer">
+<div id = "header">
+<span style = "left : 0%" id = "instructionBar" onclick = "instruction()">INSTRUCTIONS</span>
+<span style = "right : 0%" onclick = "setting()" id = "settingBar">SETTING</span>	
+</div>
+<div id = "instruction">
+<h3 style = "text-align : center">INSTRUCTIONS</h3>
+</div>
+<div id = "setting">
+   <h3 style = "text-align : center">SETTING</h3>
+      <h4>Choose your's assistant language</h4>
+      <select id = "select"></select><br>
+      <label for="rate">Rate</label><input type="range" min="0.5" max="2" value="1" step="0.1" id="rate"><br>
+      <label for="pitch">Pitch</label><input type="range" min="0" max="2" value="1" step="0.1" id="pitch"><br>
+      <button onclick="speak('hello Sir , it\'s awesome to meet you' )">DEMO</button>
+</div>
+</div>
+<!--==============================================-->
+<script>
+var instructionPad = false ; 
+var settingPad = false ;
+var currentView = 'i' ;
+var currentFrame = 'small' ;  
+function screenFrame(){
+var iframe = document.querySelector('#midPanel>#viewI>#webBar');
+var img = document.querySelector('#midPanel>#viewI>#webBar>img') ; 
+if(currentFrame === 'small'){
+img.src = '/proff/close.png' ; 	
+iframe.style.position = 'fixed'; 
+iframe.style.left = '0%' ; 
+iframe.style.top  = '12%' ; 
+iframe.style.height = '100%' ; 
+iframe.style.zIndex = '30' ; 
+currentFrame = 'large' ;  
+}
+else { 
+img.src = '/proff/open.png' ;	
+iframe.style.position = 'absolute'; 
+iframe.style.left = '0%' ; 
+iframe.style.top  = '0%' ; 
+iframe.style.width = '100%' ;
+iframe.style.height = '400px' ; 
+iframe.style.zIndex = '0' ; 
+currentFrame = 'small' ; 
+} 	
+} 
+function changeNotionItoQ(){
+var designElementQ = document.querySelector('#leftPanel>#panel>#conversative') ;
+var designElementI = document.querySelector('#leftPanel>#panel>#informatic') ; 
+designElementQ.style.background  = '#A6B8C3';
+designElementQ.style.color = 'white' ;  
+designElementI.style.background = '#eeeeee' ; 
+designElementI.style.color = "black" ; 
+document.querySelector('#midPanel>#viewI>#webBar').style.visibility = 'hidden' ;	
+document.querySelector('#midPanel>#viewI>#webBar').style.display = 'none' ;	
+currentView = 'q' ; 
+document.querySelector('#midPanel>#viewI').style.visibility = 'hidden' ; 
+document.querySelector('#rightPanel>#viewI').style.visibility = 'hidden' ; 
+document.querySelector('#midPanel>#viewQ').style.visibility = 'visible' ; 
+document.querySelector('#rightPanel>#viewQ').style.visibility = 'visible' ; 	
+document.querySelector('#midPanel>#viewI').style.display = 'none' ; 
+document.querySelector('#rightPanel>#viewI').style.display = 'none' ; 
+document.querySelector('#midPanel>#viewQ').style.display = 'block' ; 
+document.querySelector('#rightPanel>#viewQ').style.display = 'block' ; 
+}
+function changeNotionQtoI(){
+var designElementQ = document.querySelector('#leftPanel>#panel>#conversative') ;
+var designElementI = document.querySelector('#leftPanel>#panel>#informatic') ; 
+designElementQ.style.background  = '#eeeeee';
+designElementQ.style.color = "black" ;  
+designElementI.style.background = '#A6B8C3' ; 
+designElementI.style.color = "white" ; 	
+document.querySelector('#midPanel>#viewI>#webBar').style.visibility = 'visible' ;
+document.querySelector('#midPanel>#viewI>#webBar').style.display = 'block' ;
+currentView = 'i' ;
+document.querySelector('#midPanel>#viewI').style.display = 'block' ; 
+document.querySelector('#rightPanel>#viewI').style.display = 'block' ; 
+document.querySelector('#midPanel>#viewQ').style.display = 'none' ; 
+document.querySelector('#rightPanel>#viewQ').style.display = 'none' ; 	
+document.querySelector('#midPanel>#viewI').style.visibility = 'visible' ; 
+document.querySelector('#rightPanel>#viewI').style.visibility = 'visible' ; 
+document.querySelector('#midPanel>#viewQ').style.visibility = 'hidden' ; 
+document.querySelector('#rightPanel>#viewQ').style.visibility = 'hidden' ; 	
+}
+
+function instruction(){
+settingInDefault() ;
+if(!instructionPad){ 	
+var instructionBar =  document.querySelector('#instructionBar') ; 
+instructionBar.style.background = '#A6B8C3' ; 
+instructionBar.style.color = 'white' ; 
+var instruction = document.querySelector('#instruction') ; 
+instruction.style.visibility = 'visible' ; 
+instruction.style.display = 'block' ;
+instruction.style.height = '50%' ; 
+instructionPad = true ; 
+}
+else
+instructionInDefault() ; 
+}
+
+function setting(){
+instructionInDefault() ;
+if(!settingPad){ 	
+var settingBar =  document.querySelector('#settingBar') ; 
+settingBar.style.background = '#A6B8C3' ; 
+settingBar.style.color = 'white' ; 
+var setting = document.querySelector('#setting') ; 
+setting.style.visibility = 'visible' ; 
+setting.style.display = 'block' ;
+setting.style.height = '50%'; 
+settingPad = true ;   
+ }
+ else
+ 	settingInDefault() ; 
+ }
+function instructionInDefault(){
+instructionPad = false ; 	
+var instructionBar = document.querySelector('#instructionBar') ; 
+instructionBar.style.color = '#5DADE2' ; 
+instructionBar.style.background = '#eeeeee' ; 
+var instruction = document.querySelector('#instruction') ; 
+instruction.style.visibility = 'hidden' ; 
+instruction.style.display  = 'none' ; 
+instruction.style.height = '0%' ; 	
+}
+function settingInDefault(){
+settingPad = false ;	
+var settingBar = document.querySelector('#settingBar') ; 
+settingBar.style.color = '#5DADE2' ; 
+settingBar.style.background = '#eeeeee' ; 
+var setting = document.querySelector('#setting') ; 
+setting.style.visibility = 'hidden' ; 
+setting.style.display = 'none' ;
+setting.style.height = '0%' ; 	
+}
+</script>
+<script src = "/proff/JSFiles/synthesiser.js"></script>
+<script src = "/proff/JSFiles/searchQuery.js"></script>
+<script src = "/proff/JSFiles/songQuery.js"></script>
+<script src = "/proff/JSfiles/inputQueryFilter.js"></script>
+<script src = "/proff/JSFiles/recognition.js"></script>
+</body>
+</html>
