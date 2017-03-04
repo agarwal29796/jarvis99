@@ -31,6 +31,7 @@ if (speechSynthesis.onvoiceschanged !== undefined) {
 
 
 function speak(text , flag){
+synth.cancel() ;	
 var utterance = new SpeechSynthesisUtterance(text);
 var selectedOption = voiceSelect.selectedOptions[0].getAttribute('data-name') ;  
 for( i = 0 ; i < voices.length ; i++)
@@ -43,7 +44,6 @@ for( i = 0 ; i < voices.length ; i++)
 utterance.pitch  = pitch.value ; 
 utterance.rate = rate.value ; 	
 //if(flag === 'immediate')
-synth.cancel() ;	
 synth.speak(utterance); 
 }
 
