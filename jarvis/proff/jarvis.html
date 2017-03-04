@@ -389,6 +389,7 @@ currentFrame = 'small' ;
 }   
 } 
 function changeNotionItoQ(){
+speakingMode = 'q' ;   
 var designElementQ = document.querySelector('#leftPanel>#panel>#conversative') ;
 var designElementI = document.querySelector('#leftPanel>#panel>#informatic') ; 
 designElementQ.style.background  = '#A6B8C3';
@@ -408,6 +409,7 @@ document.querySelector('#midPanel>#viewQ').style.display = 'block' ;
 document.querySelector('#rightPanel>#viewQ').style.display = 'block' ; 
 }
 function changeNotionQtoI(){
+speakingMode = 'c' ;   
 var designElementQ = document.querySelector('#leftPanel>#panel>#conversative') ;
 var designElementI = document.querySelector('#leftPanel>#panel>#informatic') ; 
 designElementQ.style.background  = '#eeeeee';
