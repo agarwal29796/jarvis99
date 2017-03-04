@@ -54,7 +54,7 @@ var match1ToSpeakUp = string.match(speakUp) ;
 if(match1ToSpeakUp !== null){
 if(speakingMode === 'c')
 {
-speak('sorry, sir you have not allowed me to read further') ;
+speak('sorry, sir you have not allowed me to go further') ;
 }
 else if(speakingMode === 'q')
 {
