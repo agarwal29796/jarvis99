@@ -7,7 +7,7 @@
     "test": "node app1.js", 
     "start" :"node app1.js"
   },
-  "author": "'ARCHIT,AKSHAT'",
+  "author": "'ARCHIT'",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.16.1",
